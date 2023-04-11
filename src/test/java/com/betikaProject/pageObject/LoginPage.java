@@ -15,17 +15,13 @@ public class LoginPage {
     }
 
     /* Finding Login Page Web Elements */
-    @FindBy(xpath="/html/body/div[3]/main/div/div[3]/div/div/div[2]/div[1]/input")
+    @FindBy(xpath="//input[@placeholder='e.g. 0712 234567']")
     @CacheLookup
     WebElement textPhoneNumber;
 
-    @FindBy(xpath = "/html/body/div[3]/main/div/div[3]/div/div/div[2]/div[2]/div/input")
+    @FindBy(xpath = "//input[@type='password']")
     @CacheLookup
     WebElement textPassword;
-
-    @FindBy(className = "checkbox")
-    @CacheLookup
-    WebElement btnCheckBox;
 
     @FindBy(className = "button")
     @CacheLookup
@@ -39,10 +35,6 @@ public class LoginPage {
 
     public void setPassword(String userPassword){
         textPassword.sendKeys(userPassword);
-    }
-
-    public void tapCheckBox(){
-        btnCheckBox.click();
     }
 
     public void clickLoginBtn(){
